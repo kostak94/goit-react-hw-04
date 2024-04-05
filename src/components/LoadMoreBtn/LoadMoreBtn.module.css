@@ -1,0 +1,23 @@
+.btn_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.btn {
+  color: white;
+  background-color: rgb(6, 6, 178);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 6px;
+  outline: none;
+}
+
+.btn:hover {
+  cursor: pointer;
+  background-color: rgb(17, 17, 232);
+}

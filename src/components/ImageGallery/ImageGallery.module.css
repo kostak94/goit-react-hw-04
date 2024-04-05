@@ -1,0 +1,35 @@
+.gallery {
+  margin: 0 auto;
+  padding-top: 40px;
+  padding-bottom: 25px;
+  padding-right: 0;
+  padding-left: 0;
+  max-width: 1500px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.img_box {
+  margin: 0;
+  padding: 0;
+}
+.item {
+  margin: 0;
+  list-style: none;
+  cursor: pointer;
+  transition: 250ms cubic-bezier(0.14, 0.04, 0.66, 0.99);
+}
+.img {
+  display: block;
+  width: 360px;
+  height: 280px;
+  border-radius: 4px;
+}
+
+.item:hover {
+  -webkit-transform: scale(1.045);
+  -ms-transform: scale(1.045);
+  transform: scale(1.045);
+}
