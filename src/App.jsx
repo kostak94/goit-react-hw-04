@@ -24,6 +24,9 @@ function App() {
   const handleFetch = async (newPage, query) => {
     try {
       if (!query.trim()) {
+        toast.error("Search input must be filled!", {
+          position: "top-right",
+        });
         setImages([]);
 
         return;
@@ -72,6 +75,7 @@ function App() {
       <Toaster />
 
       <SearchBar
+        setImages={setImages}
         onSubmit={onSubmit}
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
