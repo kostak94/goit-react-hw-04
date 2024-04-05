@@ -10,9 +10,7 @@ const SearchBar = ({ onSubmit, searchQuery, setSearchQuery }) => {
 
   return (
     <header className={css.header}>
-      {/* <Toaster /> */}
-
-      <div className={css.input_container}>
+      <form className={css.input_container} onSubmit={handleSubmit}>
         <input
           className={css.input}
           value={searchQuery}
@@ -23,13 +21,10 @@ const SearchBar = ({ onSubmit, searchQuery, setSearchQuery }) => {
           autoFocus
           onChange={(e) => setSearchQuery(e.target.value)}
         />
-        <GoSearch
-          onClick={handleSubmit}
-          type="submit"
-          className={css.icon}
-          size={24}
-        />
-      </div>
+        <button className={css.btn} type="submit">
+          <GoSearch className={css.icon} size={24} />
+        </button>
+      </form>
     </header>
   );
 };
