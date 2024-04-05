@@ -1,14 +1,21 @@
 import { GoSearch } from "react-icons/go";
+import toast, { Toaster } from "react-hot-toast";
 import css from "./SearchBar.module.css";
 
 const SearchBar = ({ onSubmit, searchQuery, setSearchQuery }) => {
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   onSubmit(searchQuery);
-  //   setSearchQuery("");
-  // };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!searchQuery)
+      return toast.error("Search input must be filled!", {
+        position: "top-right",
+      });
+    onSubmit(searchQuery);
+    setSearchQuery("");
+  };
   return (
     <header className={css.header}>
+      <Toaster />
+
       <div className={css.input_container}>
         <input
           className={css.input}
@@ -21,7 +28,7 @@ const SearchBar = ({ onSubmit, searchQuery, setSearchQuery }) => {
           onChange={(e) => setSearchQuery(e.target.value)}
         />
         <GoSearch
-          onClick={onSubmit}
+          onClick={handleSubmit}
           type="submit"
           className={css.icon}
           size={24}

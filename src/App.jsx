@@ -26,9 +26,6 @@ function App() {
       if (!query.trim()) {
         setImages([]);
 
-        toast.error("Search input must be filled!", {
-          position: "top-right",
-        });
         return;
       }
 
